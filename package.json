@@ -2,7 +2,7 @@
 	"author": "Jason",
 	"name": "fcc-learn-npm-package-json",
 	"description": "Learning about Backend Development",
-	"keywords": ["freeCodeCamp", "Backend Development", "Node.js"],
+	"keywords": ["freecodecamp", "Backend Development", "Node.js"],
 	"license": "MIT",
 	"version": "1.0",
 	"dependencies": {
