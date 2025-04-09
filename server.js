@@ -23,8 +23,15 @@ if (!process.env.DISABLE_XORIGIN) {
   });
 }
 //Sending CSS file to server 
+
 app.use(express.static(__dirname + "/public"));
 app.use('/public', express.static(__dirname + "/public"));
+
+//Serving JSON on a specific route 
+
+app.get("/json", function(req,res){
+  res.json({"message": "Hello Json"})
+});
 
 // app.use('/public', express.static(process.cwd() + '/public'));
 
@@ -58,11 +65,13 @@ app.use('/public', express.static(__dirname + "/public"));
 // }) 
 
 //Sending HTML file to sever 
+
 app.get("/", function(req,res){
   res.sendFile(__dirname + "/views/index.html");
 });
 
 //Listen on port set in environment variable or default to 3000
+
 const port = process.env.PORT || 3000;
 bGround.setupBackgroundApp(app, myApp, __dirname).listen(port,function () {
   bGround.log(`Node is listening on port ${port}...`);
